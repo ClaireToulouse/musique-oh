@@ -1,19 +1,20 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Media } from 'reactstrap';
 
-const Album = props => {
+const Album = ({cover, title, artist}) => {
   return (
-    <Media>
+    <Media className="py-2">
       <Media left href="#">
-        <Media src="https://img.discogs.com/ErZsmFSMqd_DJ8V4lRN4bw6EaNw=/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-49769-1237399807.jpeg.jpg" alt="album cover" />
+        <Media src={cover} alt={`photo cover de ${title}`}/>
       </Media>
-      <Media body>
+      <Media body className="">
         <Media heading>
-          Violator
+          {title}
         </Media>
-        Depeche Mode
+        {artist}
       </Media>
     </Media>
   );
-};
+}
+
 export default Album;
