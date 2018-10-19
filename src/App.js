@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import Album from './components/Album';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import albums from './data/albums';
+import albums from './data/albums.json';
+import Sidebar from './components/Sidebar';
 
 
 class App extends Component {
@@ -17,11 +18,14 @@ class App extends Component {
 
     return (
       <div className="container">
-        {
-          albums.map((album, index) => (
-            <Album key={index} {...album}/>
-          ))
-        } 
+        <div className="row">
+          {
+            albums.map((album, index) => (
+              <Album key={index} {...album}/>
+            ))
+          } 
+          <Sidebar />
+        </div>
       </div>
     )
   }
