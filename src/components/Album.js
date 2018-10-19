@@ -7,7 +7,7 @@ const Album = ({cover, title, artist}) => {
       <Media left href="#">
         <Media src={cover} alt={`photo cover de ${title}`}/>
       </Media>
-      <Media body className="">
+      <Media body className="pl-2">
         <Media heading>
           {title}
         </Media>
