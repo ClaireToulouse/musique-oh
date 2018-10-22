@@ -14,7 +14,8 @@ class App extends Component {
   constructor (props) {
     super (props);
     this.state = {
-      showSidebar: false
+      showSidebar: false,
+      showAlbumId: 0
     }
   }
 
@@ -22,26 +23,32 @@ class App extends Component {
     showSidebar : !this.state.showSidebar
   })
 
+  selectAlbum = index => this.setState ({
+      showAlbumId: index
+    })
+  
+
   render() {
-    const { showSidebar } = this.state
+    const { showSidebar } = this.state;
+    const { showAlbumId } = this.state;
+
     return (
       <div>
-        
         <Navbar />
-        
-        <div className="container my-2">
-          
+        <div className="container my-2">         
           <Button outline color="primary"
-          onClick={this.toggleSidebar}>{showSidebar? 'Cacher la barre latérale' : 'Afficher la barre latérale'}
+          onClick={this.toggleSidebar}>
+          {showSidebar? 'Cacher la barre latérale' : 'Afficher la barre latérale'}
           </Button>
           <div className="row">
             <div className = "col-9">       
               {
                 albums.map((album, index) => (
-                  <Album key={index} {...album}/>
+                  <Album key={index} {...album}
+                  onSelectAlbum={()=>this.selectAlbum(index)}/>
                 ))
               } 
-               <AlbumDetails {...albums[0]}/>
+               <AlbumDetails {...albums[showAlbumId]}/>
             </div>
             <div className = "col-3">       
               {
