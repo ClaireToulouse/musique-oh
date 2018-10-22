@@ -1,12 +1,11 @@
 import React from 'react';
 import { Media } from 'reactstrap';
-import AlbumDetails from './AlbumDetails';
 
-const Album = ({cover, title, artist}) => {
+const AlbumDetails = ({cover, title, artist, artistbio}) => {
   return (
     <Media className="py-2">
       <Media left href="#">
-        <Media style={{ maxWidth: '150px' }} src={cover} alt={`jaquette album ${title}`}/>
+        <Media src={cover} alt={`photo cover de ${title}`}/>
       </Media>
       <Media body className="pl-2">
         <Media heading>
@@ -14,11 +13,11 @@ const Album = ({cover, title, artist}) => {
         </Media>
         {artist}
         <div className="pt-2 font-italic">
-          <AlbumDetails />
-        </div>        
+          {artistbio}
+        </div>
       </Media>
     </Media>
   );
 }
 
-export default Album;
+export default AlbumDetails;
