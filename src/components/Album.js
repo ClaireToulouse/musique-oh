@@ -1,12 +1,12 @@
 import React from 'react';
 import { Media } from 'reactstrap';
-import AlbumDetails from './AlbumDetails';
 
-const Album = ({cover, title, artist, onSelectAlbum}) => {
+const Album = ({cover, title, artist, onSelectAlbum, selected}) => {
   return (
-    <Media className="py-2">
-      <Media left
-      onClick={onSelectAlbum}>
+    <Media className="my-2"
+    onClick={onSelectAlbum}
+    style={{background: selected? '#ddf' : '#fff'}}>
+      <Media left>
         <Media style={{ maxWidth: '150px' }} src={cover} alt={`jaquette album ${title}`}/>
       </Media>
       <Media body className="pl-2">

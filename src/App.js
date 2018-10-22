@@ -29,8 +29,7 @@ class App extends Component {
   
 
   render() {
-    const { showSidebar } = this.state;
-    const { showAlbumId } = this.state;
+    const { showSidebar, showAlbumId } = this.state;
 
     return (
       <div>
@@ -45,6 +44,7 @@ class App extends Component {
               {
                 albums.map((album, index) => (
                   <Album key={index} {...album}
+                  selected ={index === showAlbumId}
                   onSelectAlbum={()=>this.selectAlbum(index)}/>
                 ))
               } 
@@ -56,7 +56,6 @@ class App extends Component {
               }
             </div>
           </div>
-
         </div>
       </div>
     )
