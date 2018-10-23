@@ -1,58 +1,23 @@
 import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-class AddAlbum extends React.Component {
-
-  constructor (props) {
-    super(props);
-    this.state = {
-      title: '',
-      artist: '',
-      cover: '',
-      artistbio: ''
-    }
-  }
-
-  handleChange = event => {
-    this.setState ({
-      [event.target.name] : event.target.value
-    })
-  }
-
+export default class ContactPage extends React.Component {
+  
   render() {
-    const { title, artist, cover, artistbio } = this.state;
-    
     return (
       <Form>
         <FormGroup row>
-          <Label for="album title" sm={2}>Nom de l'album</Label>
+          <Label for="exampleEmail" sm={2}>Email</Label>
           <Col sm={10}>
-            <Input onChange={this.handleChange}
-            type="text" id="" placeholder="Nom de l'album" name="title" />
+            <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="artist name" sm={2}>Nom de l'artiste</Label>
+          <Label for="examplePassword" sm={2}>Password</Label>
           <Col sm={10}>
-            <Input onChange={this.handleChange}
-            type="text" id="" placeholder="Nom de l'artiste" name="artist"/>
+            <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
           </Col>
         </FormGroup>
-        <FormGroup row>
-          <Label for="url name" sm={2}>Photo de l'album</Label>
-          <Col sm={10}>
-            <Input onChange={this.handleChange}
-            type="url" id="" placeholder="Lien vers la pochette de l'album" name="cover"/>
-          </Col>
-        </FormGroup>
-        <FormGroup row>
-          <Label for="exampleText" sm={2}>Text Area</Label>
-          <Col sm={10}>
-            <Input onChange={this.handleChange}
-            type="textarea" name="text" id="" name="artistbio"/>
-          </Col>
-        </FormGroup>
-
         <FormGroup row>
           <Label for="exampleSelect" sm={2}>Select</Label>
           <Col sm={10}>
@@ -78,6 +43,12 @@ class AddAlbum extends React.Component {
           </Col>
         </FormGroup>
         <FormGroup row>
+          <Label for="exampleText" sm={2}>Text Area</Label>
+          <Col sm={10}>
+            <Input type="textarea" name="text" id="exampleText" />
+          </Col>
+        </FormGroup>
+        <FormGroup row>
           <Label for="exampleFile" sm={2}>File</Label>
           <Col sm={10}>
             <Input type="file" name="file" id="exampleFile" />
@@ -85,6 +56,29 @@ class AddAlbum extends React.Component {
               This is some placeholder block-level help text for the above input.
               It's a bit lighter and easily wraps to a new line.
             </FormText>
+          </Col>
+        </FormGroup>
+        <FormGroup tag="fieldset" row>
+          <legend className="col-form-label col-sm-2">Radio Buttons</legend>
+          <Col sm={10}>
+            <FormGroup check>
+              <Label check>
+                <Input type="radio" name="radio2" />{' '}
+                Option one is this and that—be sure to include why it's great
+              </Label>
+            </FormGroup>
+            <FormGroup check>
+              <Label check>
+                <Input type="radio" name="radio2" />{' '}
+                Option two can be something else and selecting it will deselect option one
+              </Label>
+            </FormGroup>
+            <FormGroup check disabled>
+              <Label check>
+                <Input type="radio" name="radio2" disabled />{' '}
+                Option three is disabled
+              </Label>
+            </FormGroup>
           </Col>
         </FormGroup>
         <FormGroup row>
@@ -106,6 +100,5 @@ class AddAlbum extends React.Component {
       </Form>
     );
   }
-};
-
-export default AddAlbum;
+}
+export default ContactPage;
