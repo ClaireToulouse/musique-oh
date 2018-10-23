@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import Album from './components/Album';
 import albums from './data/albums.json';
-import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar';
 import { Button } from 'reactstrap';
 import AlbumDetails from "./components/AlbumDetails"
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 
 class App extends Component {
 
@@ -24,9 +22,8 @@ class App extends Component {
   })
 
   selectAlbum = index => this.setState ({
-      showAlbumId: index
-    })
-  
+    showAlbumId: index
+  })
 
   render() {
     const { showSidebar, showAlbumId } = this.state;
@@ -48,12 +45,12 @@ class App extends Component {
                   onSelectAlbum={()=>this.selectAlbum(index)}/>
                 ))
               } 
-               <AlbumDetails {...albums[showAlbumId]}/>
             </div>
             <div className = "col-3">       
               {
-              showSidebar && <Sidebar />
+              showSidebar && <AlbumDetails {...albums[showAlbumId]}/>
               }
+              
             </div>
           </div>
         </div>

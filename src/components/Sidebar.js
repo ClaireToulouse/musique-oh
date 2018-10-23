@@ -8,10 +8,8 @@ const Sidebar = ({ show }) => {
             transition : 'right 0.5s' 
 
         }}>
-        Barre latérale
         </div>
     )
 }
-
 
 export default Sidebar;
