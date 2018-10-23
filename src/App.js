@@ -3,7 +3,8 @@ import Album from './components/Album';
 import albums from './data/albums.json';
 import Navbar from './components/Navbar';
 import { Button } from 'reactstrap';
-import AlbumDetails from "./components/AlbumDetails"
+import AlbumDetails from "./components/AlbumDetails";
+import AddAlbum from "./components/AddAlbum";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -53,6 +54,9 @@ class App extends Component {
               
             </div>
           </div>
+        </div>
+        <div className="container">
+              <AddAlbum/>
         </div>
       </div>
     )

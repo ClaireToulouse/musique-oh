@@ -1,23 +1,19 @@
 import React from 'react';
-import { Media } from 'reactstrap';
+import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 const AlbumDetails = ({cover, title, artist, artistbio}) => {
   return (
-    <Media className="py-2">
-      <Media left href="#">
-        <Media src={cover} alt={`photo cover de ${title}`}/>
-      </Media>
-      <Media body className="pl-2">
-        <Media heading>
-          {title}
-        </Media>
-        {artist}
-        <div className="pt-2 font-italic">
-          {artistbio}
-        </div>
-      </Media>
-    </Media>
+    <Card>
+    <CardBody>
+      <CardTitle>{title}</CardTitle>
+      <CardSubtitle>{artist}</CardSubtitle>
+      </CardBody>
+      <CardImg top width="100%" src={cover} alt={`photo cover de ${title}`} />
+      <CardBody>
+      <CardText>{artistbio} </CardText>
+      <Button>Button</Button>
+    </CardBody>
+  </Card>
   );
 }
-
-export default AlbumDetails;
+export default AlbumDetails; 
