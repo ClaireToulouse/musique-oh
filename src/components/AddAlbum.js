@@ -22,7 +22,7 @@ class AddAlbum extends React.Component {
   }
   handleSubmit = event => {
     event.preventDefault();
-    console.log('propriétés du nouvel ajout : ', this.state)
+    this.props.onSubmitForm(this.state);
   }
 
   render() {

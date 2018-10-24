@@ -14,7 +14,8 @@ class App extends Component {
     super (props);
     this.state = {
       showSidebar: false,
-      showAlbumId: 0
+      showAlbumId: 0,
+      albums: albums
     }
   }
 
@@ -26,8 +27,15 @@ class App extends Component {
     showAlbumId: index
   })
 
+  addAlbum = newAlbum => {
+    const albums = this.state.albums.concat(newAlbum);
+    this.setState ({
+      albums
+    })
+  }
+
   render() {
-    const { showSidebar, showAlbumId } = this.state;
+    const { showSidebar, showAlbumId, albums } = this.state;
 
     return (
       <div>
@@ -56,7 +64,7 @@ class App extends Component {
           </div>
         </div>
         <div className="container">
-              <AddAlbum/>
+            <AddAlbum onSubmitForm={this.addAlbum}/>
         </div>
       </div>
     )
