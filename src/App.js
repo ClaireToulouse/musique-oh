@@ -4,7 +4,7 @@ import albums from './data/albums.json';
 import Navbar from './components/Navbar';
 import { Button } from 'reactstrap';
 import AlbumDetails from "./components/AlbumDetails";
-import AddAlbum from "./components/AddAlbum";
+import AddAlbum from "./components/ContactPage";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
