@@ -11,6 +11,8 @@ class AddAlbum extends React.Component {
       cover: '',
       artistbio: ''
     }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange = event => {
@@ -18,12 +20,12 @@ class AddAlbum extends React.Component {
       [event.target.name] : event.target.value
     })
   }
-  handelSubmit = () => {
-
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log('propriétés du nouvel ajout : ', this.state)
   }
 
   render() {
-    const { title, artist, cover, artistbio } = this.state;
     
     return (
       <Form onSubmit={this.handleSubmit}>
@@ -52,31 +54,19 @@ class AddAlbum extends React.Component {
           <Label for="exampleText" sm={2}>Text Area</Label>
           <Col sm={10}>
             <Input onChange={this.handleChange}
-            type="textarea" name="text" id="" name="artistbio"/>
+            type="textarea" id="" placeholder="au sujet de l'artiste " name="artistbio"/>
           </Col>
         </FormGroup>
 
         <FormGroup row>
-          <Label for="exampleSelect" sm={2}>Select</Label>
-          <Col sm={10}>
-            <Input type="select" name="select" id="exampleSelect">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </Input>
-          </Col>
-        </FormGroup>
-        <FormGroup row>
-          <Label for="exampleSelectMulti" sm={2}>Select Multiple</Label>
+          <Label for="exampleSelectMulti" sm={2}>Catégorie musicale</Label>
           <Col sm={10}>
             <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>Pop/Rock</option>
+              <option>Indé</option>
+              <option>Electro</option>
+              <option>Classique</option>
+              <option>Jazz</option>
           </Input>
           </Col>
         </FormGroup>
@@ -102,7 +92,7 @@ class AddAlbum extends React.Component {
         </FormGroup>
         <FormGroup check row>
           <Col sm={{ size: 10, offset: 2 }}>
-            <Button>Submit</Button>
+            <Button>Envoyer</Button>
           </Col>
         </FormGroup>
       </Form>
