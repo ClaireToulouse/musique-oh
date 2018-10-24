@@ -18,12 +18,15 @@ class AddAlbum extends React.Component {
       [event.target.name] : event.target.value
     })
   }
+  handelSubmit = () => {
+
+  }
 
   render() {
     const { title, artist, cover, artistbio } = this.state;
     
     return (
-      <Form>
+      <Form onSubmit={this.handleSubmit}>
         <FormGroup row>
           <Label for="album title" sm={2}>Nom de l'album</Label>
           <Col sm={10}>
@@ -82,8 +85,7 @@ class AddAlbum extends React.Component {
           <Col sm={10}>
             <Input type="file" name="file" id="exampleFile" />
             <FormText color="muted">
-              This is some placeholder block-level help text for the above input.
-              It's a bit lighter and easily wraps to a new line.
+              Ajoutez le lien vers la jaquette
             </FormText>
           </Col>
         </FormGroup>
