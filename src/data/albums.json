@@ -3,18 +3,21 @@
     "title": "Violator",
     "artist": "Depeche Mode",
     "cover": "https://img.discogs.com/ErZsmFSMqd_DJ8V4lRN4bw6EaNw=/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-49769-1237399807.jpeg.jpg",
-    "artistbio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus mauris, aliquet eget finibus id, laoreet in ante."
+    "artistbio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer lacus mauris, aliquet eget finibus id, laoreet in ante.",
+    "category": "Rock"
   },
   {
     "title":"Gloria",
     "artist":"Vivaldi",
     "cover":"https://img.discogs.com/d6eHtGeS0QpvRe8e7WkA4PAy11I=/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5075417-1383824654-4415.jpeg.jpg",
-    "artistbio": "Donec efficitur neque augue, a pellentesque magna blandit at"
+    "artistbio": "Donec efficitur neque augue, a pellentesque magna blandit at",
+    "category": "Classique"
   },
   {
     "title":"Present Tense",
     "artist":"wild Beasts",
     "cover":"https://img.discogs.com/w7eqqrJphGuUNgfUTTuo-_NmCGg=/fit-in/300x300/filters:strip_icc():format(jpeg):mode_rgb():quality(40)/discogs-images/R-5430262-1393167532-9800.jpeg.jpg",
-    "artistbio": "Phasellus a erat tempor, aliquam metus tristique, blandit est."
+    "artistbio": "Phasellus a erat tempor, aliquam metus tristique, blandit est.",
+    "category": "Pop/Rock"
   }
 ]

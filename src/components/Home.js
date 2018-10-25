@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import { Button } from 'reactstrap';
 import Album from './Album';
 import AlbumDetails from "./AlbumDetails";
-import albums from '../data/albums.json';
-import AddAlbum from './AddAlbum';
 
 class Home extends Component {
 
@@ -12,7 +10,6 @@ class Home extends Component {
     this.state = {
       showSidebar: false,
       showAlbumId: 0,
-      albums: albums
     }
   }
 
@@ -25,7 +22,9 @@ class Home extends Component {
   });
 
   render() {
-    const { showSidebar, showAlbumId, albums } = this.state;
+    const { showSidebar, showAlbumId } = this.state;
+    const { albums } = this.props;
+    
     return(
       <div>
         <div className="container my-2">         

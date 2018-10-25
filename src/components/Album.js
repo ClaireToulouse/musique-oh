@@ -1,7 +1,7 @@
 import React from 'react';
 import { Media } from 'reactstrap';
 
-const Album = ({cover, title, artist, onSelectAlbum, selected}) => {
+const Album = ({cover, title, artist, onSelectAlbum, selected, category}) => {
   return (
     <Media className="my-2"
     onClick={onSelectAlbum}
@@ -13,7 +13,10 @@ const Album = ({cover, title, artist, onSelectAlbum, selected}) => {
         <Media heading>
           {title}
         </Media>
-        {artist}  
+          {artist}<br/>
+        <small>
+          {category}
+        </small>
       </Media>
     </Media>
   );

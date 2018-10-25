@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Col, Button, Form, FormGroup, Label, Input, FormText, Container } from 'reactstrap';
+import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+
 
 class AddAlbum extends Component {
 
@@ -9,7 +10,8 @@ class AddAlbum extends Component {
       title: '',
       artist: '',
       cover: '',
-      artistbio: ''
+      artistbio: '',
+      category: '',
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,15 +25,12 @@ class AddAlbum extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.onSubmitForm(this.state);
+    this.props.history.push('/');
   }
-  addAlbum = newAlbum => {
-    const albums = this.state.albums.concat(newAlbum);
-    this.setState ({
-      albums
-    })
-  };
 
   render() {
+    const { albums } = this.state;
+  
     return (
       <div className ="container">
         <Form onSubmit={this.handleSubmit}>
@@ -39,35 +38,35 @@ class AddAlbum extends Component {
             <Label for="album title" sm={2}>Nom de l'album</Label>
             <Col sm={10}>
               <Input onChange={this.handleChange}
-              type="text" id="" placeholder="Nom de l'album" name="title" />
+              type="text" id="title" placeholder="Nom de l'album" name="title" />
             </Col>
           </FormGroup>
           <FormGroup row>
             <Label for="artist name" sm={2}>Nom de l'artiste</Label>
             <Col sm={10}>
               <Input onChange={this.handleChange}
-              type="text" id="" placeholder="Nom de l'artiste" name="artist"/>
+              type="text" id="artist" placeholder="Nom de l'artiste" name="artist"/>
             </Col>
           </FormGroup>
           <FormGroup row>
             <Label for="url name" sm={2}>Photo de l'album</Label>
             <Col sm={10}>
               <Input onChange={this.handleChange}
-              type="url" id="" placeholder="Lien vers la pochette de l'album" name="cover"/>
+              type="url" id="cover" placeholder="Lien vers la pochette de l'album" name="cover"/>
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label for="exampleText" sm={2}>Text Area</Label>
+            <Label for="artistbio" sm={2}>Text Area</Label>
             <Col sm={10}>
               <Input onChange={this.handleChange}
-              type="textarea" id="" placeholder="au sujet de l'artiste " name="artistbio"/>
+              type="textarea" id="artistbio" placeholder="au sujet de l'artiste " name="artistbio"/>
             </Col>
           </FormGroup>
 
           <FormGroup row>
-            <Label for="exampleSelectMulti" sm={2}>Catégorie musicale</Label>
+            <Label for="category" sm={2}>Catégorie musicale</Label>
             <Col sm={10}>
-              <Input type="select" name="selectMulti" id="exampleSelectMulti" multiple>
+              <Input type="select" name="category" id="category" multiple>
                 <option>Pop/Rock</option>
                 <option>Indé</option>
                 <option>Electro</option>
