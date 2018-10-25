@@ -3,7 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle } from 'reac
 
 const AlbumDetails = ({cover, title, artist, artistbio}) => {
   return (
-    <Card>
+    <Card className="poppins">
     <CardBody>
       <CardTitle>{title}</CardTitle>
       <CardSubtitle>{artist}</CardSubtitle>

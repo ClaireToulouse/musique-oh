@@ -2,10 +2,12 @@ import React from 'react';
 import { Media } from 'reactstrap';
 
 const Album = ({cover, title, artist, onSelectAlbum, selected, category}) => {
+  
   return (
-    <Media className="my-2"
-    onClick={onSelectAlbum}
-    style={{background: selected? '#ddf' : '#fff'}}>
+    
+    <div className="poppins">
+    <Media  onClick={onSelectAlbum}
+    className="my-2" style={{background: selected? '#ddf' : '#fff'}}>
       <Media left>
         <Media style={{ maxWidth: '150px' }} src={cover} alt={`jaquette album ${title}`}/>
       </Media>
@@ -13,12 +15,14 @@ const Album = ({cover, title, artist, onSelectAlbum, selected, category}) => {
         <Media heading>
           {title}
         </Media>
-          {artist}<br/>
+          {artist}
+        <br/>
         <small>
           {category}
         </small>
       </Media>
     </Media>
+    </div>
   );
 }
 

@@ -7,7 +7,7 @@ import Settings from './components/Settings';
 import AddAlbum from './components/AddAlbum';
 import albums from './data/albums';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css"; 
 
 class App extends Component {
 
@@ -34,7 +34,7 @@ class App extends Component {
   render() {
     const { albums, alertMessage } = this.state;
     return (
-      <div>
+      <div className="App">
         <Navbar/>    
         <Alert color="success" isOpen={alertMessage !== ''} toggle={this.onDismiss} >
           {alertMessage} 

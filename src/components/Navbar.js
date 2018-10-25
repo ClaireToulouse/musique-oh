@@ -12,6 +12,7 @@ import {
   DropdownMenu,
   DropdownItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import "../App.css";
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -31,7 +32,7 @@ export default class Example extends React.Component {
       <div>
         <Navbar color="light" light expand="md" style={{
         height: '150px'}}>
-          <NavbarBrand to= "/"  tag={Link}>Musique-Oh
+          <NavbarBrand to= "/"  tag={Link} className="brand">Musique-Oh
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
