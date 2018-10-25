@@ -28,10 +28,12 @@ export default class Example extends React.Component {
   }
   render() {
     return (
-      <div >
+      <div>
         <Navbar color="light" light expand="md" style={{
-        height: '90px'}}>
-          <NavbarBrand href="/">Musique-Oh</NavbarBrand>
+        height: '150px'}}>
+          <NavbarBrand href="/">Musique-Oh
+            <NavLink to="/Home"></NavLink>
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
@@ -59,12 +61,11 @@ export default class Example extends React.Component {
                 </DropdownMenu>
               </UncontrolledDropdown>
               <NavItem>
-                <NavLink to="/components/">Components</NavLink>
+                <NavLink to="/Categories">Categories  </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink to="/">Ajouter un album</NavLink>
+                <NavLink to="/AddAlbum">   Ajouter un album</NavLink>
               </NavItem>
-
             </Nav>
           </Collapse>
         </Navbar>
