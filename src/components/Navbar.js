@@ -6,11 +6,12 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
+  // NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
   DropdownItem } from 'reactstrap';
+  import {NavLink} from 'react-router-dom';
 
 export default class Example extends React.Component {
   constructor(props) {
@@ -34,22 +35,22 @@ export default class Example extends React.Component {
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/components/">Components</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/">Ajouter un album</NavLink>
-              </NavItem>
-              <UncontrolledDropdown nav inNavbar>
+            <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Catégories
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    Pop/Rock
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    Classique
+                  </DropdownItem>
+                  <DropdownItem>
+                    Indé
+                  </DropdownItem>
+                  <DropdownItem>
+                    Jazz
                   </DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem>
@@ -57,6 +58,13 @@ export default class Example extends React.Component {
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
+              <NavItem>
+                <NavLink to="/components/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink to="/">Ajouter un album</NavLink>
+              </NavItem>
+
             </Nav>
           </Collapse>
         </Navbar>

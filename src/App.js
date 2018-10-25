@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
+import { Route } from 'react-router-dom';
+import Home from './components/Home';
+import Categories from './components/Categories';
 import Album from './components/Album';
 import albums from './data/albums.json';
 import Navbar from './components/Navbar';
-import { Button } from 'reactstrap';
 import AlbumDetails from "./components/AlbumDetails";
+
 import AddAlbum from "./components/AddAlbum";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -39,7 +43,11 @@ class App extends Component {
 
     return (
       <div>
-        <Navbar />
+        <Navbar/>
+        <div>
+          <Route path="/" component={Home}/> 
+          <Route path="/" component={Categories}/> 
+        </div>
         <div className="container my-2">         
           <Button outline color="primary"
           onClick={this.toggleSidebar}>
